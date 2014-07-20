@@ -56,4 +56,22 @@ app.use(function(err, req, res, next) {
 });
 
 
+var debug = require('debug')('basicChat');
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+    debug('Express server listening on port ' + server.address().port);
+});
+
+//var server = require('http').Server(app);
+var io = require('socket.io').listen(server);
+io.on('connection', function (socket) {
+    console.log("user connected");
+    socket.emit('news', { hello: 'world' });
+    socket.on('my other event', function (data) {
+        console.log(data);
+    });
+});
+
+
 module.exports = app;
