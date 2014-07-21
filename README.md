@@ -5,7 +5,7 @@
 ###1
 `express basicChat`
 
-comment out the below in app.js:
+comment out the below in `app.js`:
 
 ```javascript
 //var routes = require('./routes/index');
@@ -32,6 +32,7 @@ app.get('/', function (req, res) {
 ```
 create the file `index.html` under `/public/`
 
+psst: it still works upon just adding the `index.html` and without the commenting out
 
 ###2
 `git init`, `.gitignore` commits
@@ -80,3 +81,4 @@ Please work !
 </body>
 ```
 
+###6
